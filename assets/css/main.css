@@ -57,6 +57,7 @@ header nav {
     border-radius: 50%;
     height: 35px;
     float: right;
+    cursor: pointer;
 }
 
 .wrapper {
@@ -109,4 +110,66 @@ header nav {
     border-radius: 50%;
     margin-right: 10px;
     height: 40px;
+}
+
+#pinboard {
+    height: 700px;
+}
+
+.pinboard-header {
+    position: relative;
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 10px 50px;
+    height: 100px;
+}
+
+.pinboard-header h2 {
+    font: bold 20px 'Raleway', serif;
+    color: #636869;
+    position: relative;
+    top: 25px;
+    float: left;
+    margin: 0;
+}
+
+.sort-by {
+    font: bold 15px 'Raleway', serif;
+    color: #B6C1C3;
+    position: relative;
+    top: 25px;
+    height: 25px;
+    float: right;
+}
+
+.sort-by span {
+    margin-right: 50px;
+}
+
+.circle {
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+.images {
+    border: 2px solid #E66E4C;
+}
+
+.music {
+    border: 2px solid #239FDB;
+}
+
+.videos {
+    border: 2px solid #49CEC7;
+}
+
+.pinboard-items {
+    background-color: #EDEFF0;
+    height: 600px;
 }
