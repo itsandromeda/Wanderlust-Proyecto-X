@@ -1,21 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Megrim|Open+Sans+Condensed:300|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
+    <div class="wrapper contenido" onmousemove="myFunction(event)">
+        <header>
+            <h1>Wanderlust</h1>
+            <nav>
+                <a class="nav-options" href="#pinboard">Pinboard</a>
+                <a class="nav-options" href="#">Calendar</a>
+                <a class="nav-options" href="#">Friends</a>
+                <a class="nav-options" href="#">Messages</a>
+            </nav>
+            <img class="user" src="assets/images/friends/annia_j.jpg">
+        </header>
+        <div class="destination-details">
+            <h1>Roadtrip on Machu Picchu</h1>
+            <h2>March 3rd -  10th</h2>
+            <i class="fa fa-heart"></i>
+        </div>
+        <div class="destination"></div>
+        <div id="friend-avatar">
+            <img src="assets/images/friends/gabriella_ram.jpg" alt="Gabriella Ram">
+            <img src="assets/images/friends/gabriella_ram.jpg">
+            <img src="assets/images/friends/gabriella_ram.jpg">
+        </div>
+        <section>
+            <ul class="menu">
+                <li>
+                    <div>1</div><a href="#">Creatividad - Innovacion - Etica</a>
+                </li>
+                <li>
+                    <div>2</div><a href="#">About Us</a>
+                </li>
+                <li>
+                    <div>3</div><a href="#">Services</a>
+                </li>
+                <li>
+                    <div>4</div><a href="#">Recognition</a>
+                </li>
+                <li>
+                    <div>5</div><a href="#">Contact</a>
+                </li>
+                <li>
+                    <div>6</div><a href="#">Careers</a>
+                </li>
 
-  <section id="dropZone">
+            </ul>
 
-
-  </section>
-
-<script type="text/javascript" src="assets/js/app.js">
-
-</script>
+        </section>
+    </div>
+    <section id="pinboard">
+        <header class="pinboard-header">
+            <h2>Your pinboard</h2>
+            <div class="sort-by">
+                <span>SORT BY</span>
+                <div class="circle videos"></div>
+                <div class="circle music"></div>
+                <div class="circle images"></div>
+            </div>
+        </header>
+        <div class="pinboard-items"></div>
+    </section>
+    <script src="assets/js/app.js"></script>
 </body>
+
 </html>
+>>>>>>> Home

@@ -1,46 +1,240 @@
-*{
-  margin:0;
-  padding: 0;
-  box-sizing: border-box;
+body {
+    margin: 0;
+    padding: 0;
 }
 
-#dropZone{
-  width: 100%;
-  position: absolute;
-  /* margin: 10% 10%; */
-  top: 10%;
-      padding-left: 3%;
-
-  height: 80%;
-  background-color: skyblue;
+header {
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 10px 50px;
+    position: absolute;
+    height: 55px;
+    width: 100%;
 }
 
-.mi-contenedor-video {
-  position: relative;
-  margin:10px;
-  width: 30%;
-  display: inline-block;
+header h1 {
+    display: inline;
+    font: 30px 'Megrim', sans-serif;
+    color: #2A3133;
+}
 
+header nav {
+    display: inline;
+    margin-left: 160px;
 }
-.mi-contenedor-imagen {
-  position: relative;
-  margin:10px;
-  width: 30%;
-  height: 30%;
-  display: inline-block;
 
+.nav-options {
+    box-sizing: border-box;
+    font: 600 20px 'Open Sans Condensed', sans-serif;
+    color: #2A3133;
+    text-decoration: none;
+    border-right: 1px solid #2A3133;
+    position: relative;
+    top: -2px;
+    margin-right: -5px;
+    padding: 2px 50px;
 }
-.heart{
-  position: absolute;
-  top: 2%;
-  left: 2%;
-  width: 15%;
-  height: 15%;
-  background: green;
+
+.nav-options:last-child {
+    border: none;
 }
-.imagen{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 3%;
+
+.nav-options:hover {
+    background: #2A3133;
+    font-weight: 100;
+    color: #fff;
+    padding: 14px 50px;
 }
+
+.user {
+    border-radius: 50%;
+    height: 35px;
+    float: right;
+    cursor: pointer;
+}
+
+.wrapper {
+    background-image: url(../images/machu-picchu.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    height: 662px;
+}
+
+.destination {
+    background: rgba(22, 46, 58, 0.5);
+    height: 662px;
+    overflow: hidden;
+}
+
+.destination-details {
+    font: 25px 'Open Sans Condensed', sans-serif;
+    color: #fff;
+    position: absolute;
+    bottom: 120px;
+    left: 50px;
+    width: 450px;
+}
+
+.destination-details h1 {
+    font-weight: bold;
+    margin: 0;
+}
+
+.destination-details h2 {
+    font-weight: 100;
+    margin: 0;
+}
+
+.destination-details i {
+    color: rgb(230, 76, 101);
+    cursor: pointer;
+}
+
+#friend-avatar {
+    position: absolute;
+    width: 500px;
+    bottom: 30px;
+    left: 50px;
+}
+
+#friend-avatar img {
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+    height: 40px;
+}
+
+#pinboard {
+    height: 700px;
+}
+
+.pinboard-header {
+    position: relative;
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 10px 50px;
+    height: 100px;
+}
+
+.pinboard-header h2 {
+    font: bold 20px 'Raleway', serif;
+    color: #636869;
+    position: relative;
+    top: 25px;
+    float: left;
+    margin: 0;
+}
+
+.sort-by {
+    font: bold 15px 'Raleway', serif;
+    color: #B6C1C3;
+    position: relative;
+    top: 25px;
+    height: 25px;
+    float: right;
+}
+
+.sort-by span {
+    margin-right: 50px;
+}
+
+.circle {
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+.images {
+    border: 2px solid #E66E4C;
+}
+
+.music {
+    border: 2px solid #239FDB;
+}
+
+.videos {
+    border: 2px solid #49CEC7;
+}
+
+.pinboard-items {
+    background-color: #EDEFF0;
+    height: 600px;
+}
+
+
+/*
+    ==========================
+    MENU DESPLEGABLE
+    ==========================
+*/
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Raleway ExtraLight'), local('Raleway-ExtraLight'), url(https://fonts.gstatic.com/s/raleway/v11/8KhZd3VQBtXTAznvKjw-k_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+.menu {
+    position: absolute;
+    right: 0px;
+    top: 0;
+    height: 100%;
+    list-style: none;
+    line-height: 42px;
+    /* margin: 0em auto; */
+    padding-left: 0;
+    overflow: hidden;
+    width: 1.5em;
+}
+
+.menu div {
+    width: 1.5em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    opacity: 0.2;
+}
+
+.menu a {
+    color: #ddd;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    width: 17.5em;
+}
+
+.menu li {
+    box-shadow: -280px 0 rgba(255, 255, 255, 0.2) inset;
+    /*inset hace que cresca por dentro el borde el primer valor se refiere a la horizontal y el segundo a la vertical*/
+    padding-left: 1.5em;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+    position: relative;
+}
+
+.numero-menu {
+    position: absolute;
+    top: 0;
+    right: 19em;
+    opacity: 0.2;
+    height: 100%;
+    width: 2.5em;
+    background: #fff;
+}
+
+.menu li:hover {
+    box-shadow: -21em 0 rgba(255, 255, 255, 0.2) inset;
+    z-index: 100;
+    color: #000;
+}
+>>>>>>> Home
