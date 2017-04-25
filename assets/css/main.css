@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    background-image: url(../images/machu-picchu.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 662px;
+}
