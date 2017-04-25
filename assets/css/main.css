@@ -1,52 +1,84 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: black;
+  color: white;
+}
+.contenido{
+  position: absolute;
+  top: 10%;
+  background: skyblue;
+  height: 80%;
+  width: 94%;
+  left: 3%;
+
+}
+/******************** efecto menu ***************************/
+/* latin */
 @font-face {
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 200;
-    src: local('Raleway ExtraLight'), local('Raleway-ExtraLight'), url(https://fonts.gstatic.com/s/raleway/v11/8KhZd3VQBtXTAznvKjw-k_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Raleway ExtraLight'), local('Raleway-ExtraLight'), url(https://fonts.gstatic.com/s/raleway/v11/8KhZd3VQBtXTAznvKjw-k_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
 
-body {
-    background: #252528;
-    font-family: 'Raleway', sans-serif;
+body{
+  background:#252528;
+  font-family: 'Raleway', sans-serif;
 }
 
-.menu {
-    list-style: none;
-    line-height: 42px;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    left: 80%;
-        background: brown;
-    display: inline-block;
-    width: 15em;
-    visibility: hidden;
+.menu{
+  position: absolute;
+  right: 0px;
+  top: 0;
+  height: 100%;
+
+  list-style: none;
+  line-height: 42px;
+  /* margin: 0em auto; */
+  padding-left: 0;
+  overflow: hidden;
+  width: 1.5em;
+}
+div{
+  width: 1.5em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  opacity: 0.2;
+}
+.menu a{
+  color: #ddd;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  width: 17.5em;
+
+}
+.menu li{
+box-shadow:-280px 0 rgba(255,255,255,0.2) inset; /*inset hace que cresca por dentro el borde el primer valor se refiere a la horizontal y el segundo a la vertical*/
+
+padding-left: 1.5em;
+-webkit-transition: all .4s;
+-o-transition: all .4s;
+transition: all .4s;
+position: relative;
 }
 
-.menu a {
-    color: #ddd;
-    text-decoration: none;
-    text-transform: uppercase;
-    display: block;
-    /*para poderle dar ancho*/
-    width: 100%;
+.numero-menu{
+  position: absolute;
+top: 0;
+right: 19em;
+opacity: 0.2;
+height: 100%;
+width: 2.5em;
+background: #fff;
 }
 
-.menu li {
-    /*  outline: 1px solid green;*/
-    /*border-left: 3px solid rgba(255, 255, 255, .2); /*para darle el borde exterior*/
-    box-shadow: -3px 0 rgba(255, 255, 255, .2) inset;
-    /*inset hace que cresca por dentro el borde el primer valor se refiere a la horizontal y el segundo a la vertical*/
-    margin-bottom: 5px;
-    padding-left: 1.5em;
-    -webkit-transition: all .4s;
-    -o-transition: all .4s;
-    transition: all .4s;
-}
-.menu:hover {
-  visibility: block;
-}
-.menu li:hover {
-    box-shadow: -15em 0 rgba(255, 255, 255, 0.2) inset;
-}
+.menu li:hover{
+  box-shadow: -21em 0 rgba(255, 255, 255, 0.2) inset;
+  z-index: 100;
+  color: #000;
