@@ -1,10 +1,52 @@
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Raleway ExtraLight'), local('Raleway-ExtraLight'), url(https://fonts.gstatic.com/s/raleway/v11/8KhZd3VQBtXTAznvKjw-k_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
 body {
+    background: #252528;
+    font-family: 'Raleway', sans-serif;
+}
+
+.menu {
+    list-style: none;
+    line-height: 42px;
     margin: 0;
     padding: 0;
+    position: relative;
+    left: 80%;
+        background: brown;
+    display: inline-block;
+    width: 15em;
+    visibility: hidden;
 }
-.wrapper {
-    background-image: url(../images/machu-picchu.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 662px;
+
+.menu a {
+    color: #ddd;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    /*para poderle dar ancho*/
+    width: 100%;
+}
+
+.menu li {
+    /*  outline: 1px solid green;*/
+    /*border-left: 3px solid rgba(255, 255, 255, .2); /*para darle el borde exterior*/
+    box-shadow: -3px 0 rgba(255, 255, 255, .2) inset;
+    /*inset hace que cresca por dentro el borde el primer valor se refiere a la horizontal y el segundo a la vertical*/
+    margin-bottom: 5px;
+    padding-left: 1.5em;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+}
+.menu:hover {
+  visibility: block;
+}
+.menu li:hover {
+    box-shadow: -15em 0 rgba(255, 255, 255, 0.2) inset;
 }
