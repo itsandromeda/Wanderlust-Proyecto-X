@@ -237,4 +237,80 @@ header nav {
     z-index: 100;
     color: #000;
 }
->>>>>>> Home
+
+
+/*****************************************tooltip*/
+
+ .tooltip {
+    background-color: #fff;
+    padding: 5px;
+    position: absolute;
+    left: -60px;
+    height: 300px;
+    top: 65px;
+    width: 300px;
+    color: white;
+    border-radius: 10px;
+    display: none;
+    /*overflow: scroll;*/
+
+}
+.tooltip div:first-child{
+  height: 38px;
+    margin: 0;
+    width: 100%;
+}
+.mensaje p{
+  color: black;
+      padding-left: 18px;
+}
+.mensaje{
+  width: 268PX;
+  display: block;
+  height: 85px;
+  margin: 5px;
+  MARGIN-LEFT: 15PX;
+  border-bottom: 1px solid black;
+  position: relative;
+}
+.mensaje img{
+  position: absolute;
+  height: 81%;
+  top: 7px;
+  /* top: -11px; */
+  width: 30%;
+}
+.mensaje h3{
+  position: absolute;
+  color: black;
+      font-size: 15px;
+      height: 20%;
+      top: 6%;
+      padding-left: 8px;
+      width: 70%;
+      left: 30%;
+}
+
+.mensaje span{
+  position: absolute;
+      font-size: 15px;
+      height: 20%;
+      top: 49%;
+      padding-left: 15px;
+      left: 30%;
+      color: black;
+}
+.tooltip:after {
+    content: "";
+    width: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+    position: absolute;
+    right: 50%;
+    top: -20px;
+}
+
+.mostrar {
+    display: block;
+}
