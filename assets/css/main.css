@@ -220,6 +220,10 @@ body {
     cursor: pointer;
 }
 
+.videos {
+    border: 2px solid #49CEC7;
+}
+
 .images {
     border: 2px solid #E66E4C;
 }
@@ -228,43 +232,39 @@ body {
     border: 2px solid #239FDB;
 }
 
-.videos {
-    border: 2px solid #49CEC7;
-}
-
 .pinboard-items {
-    position: relative;
     background-color: #EDEFF0;
-    height: 600px;
+    position: relative;
+    min-height: 600px;
+    padding: 30px;
 }
 
+.mi-contenedor-imagen,
 .mi-contenedor-video {
-    position: relative;
     margin: 10px;
-    width: 30%;
+    background-color: #000;
+    border-radius: 5px;
     display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
 }
 
-.mi-contenedor-imagen {
-    position: relative;
-    margin: 10px;
-    width: 30%;
-    height: 30%;
-    display: inline-block;
+.mi-contenedor-imagen img {
+    height: 300px;
+}
+
+.mi-contenedor-video video {
+    margin-top: 70px;
+    height: 169px;
 }
 
 .heart {
     position: absolute;
-    top: 2%;
-    left: 2%;
-    width: 15%;
-    height: 15%;
-    background: green;
-}
-
-.imagen {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 3%;
+    top: 20px;
+    left: 20px;
+    width: 15px;
+    height: 15px;
+    background: #E64C65;
 }

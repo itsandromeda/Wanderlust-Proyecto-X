@@ -36,15 +36,19 @@ dropZone.addEventListener('drop', function (e) {
             reader = new FileReader();
 
             reader.onload = function (e2) {
-                var contenedor = document.createElement("video"),
+                var contenedor = document.createElement("div"),
+                    video = document.createElement("video"),
                     img = document.createElement('source'),
-                    myCaption = document.createElement("nav");
-                contenedor.setAttribute("controls", "");
+                    myCaption = document.createElement("span");
+                
                 contenedor.setAttribute("class", "mi-contenedor-video");
+                video.setAttribute("controls", "");
                 img.setAttribute("class", "imagen");
                 img.src = e2.target.result;
+                
                 myCaption.setAttribute("class", "heart");
-                contenedor.appendChild(img);
+                video.appendChild(img);
+                contenedor.appendChild(video);
                 contenedor.appendChild(myCaption);
                 dropZone.appendChild(contenedor);
             };
@@ -58,10 +62,12 @@ dropZone.addEventListener('drop', function (e) {
             reader.onload = function (e2) {
                 var contenedor = document.createElement("figure"),
                     img = document.createElement('img'),
-                    myCaption = document.createElement("figcaption");
+                    myCaption = document.createElement("span");
                 contenedor.setAttribute("class", "mi-contenedor-imagen");
                 img.setAttribute("class", "imagen");
                 img.src = e2.target.result;
+                
+                console.log(e2.target.result);
                 myCaption.setAttribute("class", "heart");
                 contenedor.appendChild(img);
                 contenedor.appendChild(myCaption);
