@@ -3,22 +3,30 @@ body {
     padding: 0;
 }
 
-header {
+
+/*
+    ==========================
+    HEADER
+    ==========================
+*/
+
+.main-header {
     background-color: #fff;
     box-sizing: border-box;
     padding: 10px 50px;
     position: absolute;
     height: 55px;
     width: 100%;
+    z-index: 5;
 }
 
-header h1 {
+.main-header h1 {
     display: inline;
     font: 30px 'Megrim', sans-serif;
     color: #2A3133;
 }
 
-header nav {
+.main-header nav {
     display: inline;
     margin-left: 160px;
 }
@@ -109,6 +117,68 @@ header nav {
     height: 700px;
 }
 
+
+/*
+    ==========================
+    MENU DESPLEGABLE
+    ==========================
+*/
+
+.menu {
+    background-color: rgba(0, 0, 0, 0.2);
+    font: 100 15px 'Raleway', serif;
+    box-sizing: border-box;
+    line-height: 42px;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    min-width: 40px;
+    height: 100%;
+    padding: 230px 0;
+    overflow: hidden;
+}
+
+.num {
+    box-sizing: border-box;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    padding: 0 16px;
+}
+
+.option {
+    color: #9d9d9d;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0 0 rgba(0, 0, 0, 1) inset;
+    position: relative;
+    height: 40px;
+    width: 20px;
+    display: block;
+    padding-left: 20px;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+
+.option span:nth-child(2) {
+    position: absolute;
+    padding: 0 56px 0 0;
+    left: 50px;
+}
+
+.option:hover {
+    color: #fff;
+    box-shadow: -200px 0 rgba(0, 0, 0, 1) inset;
+}
+
+
+/*
+    ==========================
+    PINBOARD
+    ==========================
+*/
+
 .pinboard-header {
     position: relative;
     box-sizing: border-box;
@@ -140,89 +210,59 @@ header nav {
 }
 
 .circle {
-    background-color: #fff;
     border-radius: 50%;
     display: inline-block;
     position: relative;
-    top: 3px;
     height: 15px;
     width: 15px;
     cursor: pointer;
 }
 
-.images {
-    border: 2px solid #E66E4C;
-}
-
-.music {
-    border: 2px solid #239FDB;
-}
-
-.videos {
+.sort-by .videos {
     border: 2px solid #49CEC7;
+    top: 3px;
+}
+
+.sort-by .images {
+    border: 2px solid #E66E4C;
+    top: 3px;
+}
+
+.sort-by .music {
+    border: 2px solid #239FDB;
+    top: 3px;
 }
 
 .pinboard-items {
     background-color: #EDEFF0;
-    height: 600px;
-}
-
-
-/*
-    ==========================
-    MENU DESPLEGABLE
-    ==========================
-*/
-
-@font-face {
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 200;
-    src: local('Raleway ExtraLight'), local('Raleway-ExtraLight'), url(https://fonts.gstatic.com/s/raleway/v11/8KhZd3VQBtXTAznvKjw-k_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-}
-
-.menu {
-    position: absolute;
-    right: 0px;
-    top: 0;
-    height: 100%;
-    list-style: none;
-    line-height: 42px;
-    /* margin: 0em auto; */
-    padding-left: 0;
-    overflow: hidden;
-    width: 1.5em;
-}
-
-.menu div {
-    width: 1.5em;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #fff;
-    opacity: 0.2;
-}
-
-.menu a {
-    color: #ddd;
-    text-decoration: none;
-    text-transform: uppercase;
-    display: block;
-    width: 17.5em;
-}
-
-.menu li {
-    box-shadow: -280px 0 rgba(255, 255, 255, 0.2) inset;
-    /*inset hace que cresca por dentro el borde el primer valor se refiere a la horizontal y el segundo a la vertical*/
-    padding-left: 1.5em;
-    -webkit-transition: all .4s;
-    -o-transition: all .4s;
-    transition: all .4s;
     position: relative;
+    min-height: 600px;
+    padding: 30px;
 }
 
-.numero-menu {
+.mi-contenedor-imagen, .mi-contenedor-video {
+    margin: 10px;
+    background-color: #000;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.mi-contenedor-imagen img {
+    height: 300px;
+}
+
+.mi-contenedor-video video {
+    margin-top: 70px;
+    height: 169px;
+}
+
+.pinboard-items .fa-heart-o {
+    font-size: 22px;
+    color: #E64C65;
     position: absolute;
     top: 0;
     right: 19em;
@@ -241,7 +281,7 @@ header nav {
 
 /*****************************************tooltip*/
 
- .tooltip {
+.tooltip {
     background-color: #fff;
     padding: 5px;
     position: absolute;
@@ -253,53 +293,58 @@ header nav {
     border-radius: 10px;
     display: none;
     /*overflow: scroll;*/
-
 }
-.tooltip div:first-child{
-  height: 38px;
+
+.tooltip div:first-child {
+    height: 38px;
     margin: 0;
     width: 100%;
 }
-.mensaje p{
-  color: black;
-      padding-left: 18px;
-}
-.mensaje{
-  width: 268PX;
-  display: block;
-  height: 85px;
-  margin: 5px;
-  MARGIN-LEFT: 15PX;
-  border-bottom: 1px solid black;
-  position: relative;
-}
-.mensaje img{
-  position: absolute;
-  height: 81%;
-  top: 7px;
-  /* top: -11px; */
-  width: 30%;
-}
-.mensaje h3{
-  position: absolute;
-  color: black;
-      font-size: 15px;
-      height: 20%;
-      top: 6%;
-      padding-left: 8px;
-      width: 70%;
-      left: 30%;
+
+.mensaje p {
+    color: black;
+    padding-left: 18px;
 }
 
-.mensaje span{
-  position: absolute;
-      font-size: 15px;
-      height: 20%;
-      top: 49%;
-      padding-left: 15px;
-      left: 30%;
-      color: black;
+.mensaje {
+    width: 268PX;
+    display: block;
+    height: 85px;
+    margin: 5px;
+    MARGIN-LEFT: 15PX;
+    border-bottom: 1px solid black;
+    position: relative;
 }
+
+.mensaje img {
+    position: absolute;
+    height: 81%;
+    top: 7px;
+    /* top: -11px; */
+    width: 30%;
+}
+
+.mensaje h3 {
+    position: absolute;
+    color: black;
+    font-size: 15px;
+    height: 20%;
+    top: 6%;
+    padding-left: 8px;
+    width: 70%;
+    left: 30%;
+}
+
+.mensaje span {
+    position: absolute;
+    font-size: 15px;
+    height: 20%;
+    top: 49%;
+    padding-left: 15px;
+    left: 30%;
+    color: black;
+}
+
 .tooltip:after {
     content: "";
     width: 0;
@@ -313,4 +358,23 @@ header nav {
 
 .mostrar {
     display: block;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+}
+
+.pinboard-items .videos {
+    position: absolute;
+    border: 2px solid #49CEC7;
+    top: 15px;
+    right: 15px;
+    cursor: default;
+}
+
+.pinboard-items .images {
+    border: 2px solid #E66E4C;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: default;
 }
