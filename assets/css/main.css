@@ -2,9 +2,111 @@ body {
     margin: 0;
     padding: 0;
 }
+
+
+/*
+    ==========================
+    HEADER
+    ==========================
+*/
+
+header {
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 10px 50px;
+    position: absolute;
+    height: 55px;
+    width: 100%;
+}
+
+header h1 {
+    display: inline;
+    font: 30px 'Megrim', sans-serif;
+    color: #2A3133;
+}
+
+header nav {
+    display: inline;
+    margin-left: 160px;
+}
+
+.nav-options {
+    box-sizing: border-box;
+    font: 600 20px 'Open Sans Condensed', sans-serif;
+    color: #2A3133;
+    text-decoration: none;
+    border-right: 1px solid #2A3133;
+    position: relative;
+    top: -2px;
+    margin-right: -5px;
+    padding: 2px 50px;
+}
+
+.nav-options:last-child {
+    border: none;
+}
+
+.nav-options:hover {
+    background: #2A3133;
+    font-weight: 100;
+    color: #fff;
+    padding: 14px 50px;
+}
+
+.user {
+    border-radius: 50%;
+    height: 35px;
+    float: right;
+}
+
 .wrapper {
     background-image: url(../images/machu-picchu.jpg);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 100%;
+    position: relative;
     height: 662px;
+}
+
+.destination {
+    background: rgba(22, 46, 58, 0.5);
+    height: 662px;
+    overflow: hidden;
+}
+
+.destination-details {
+    font: 25px 'Open Sans Condensed', sans-serif;
+    color: #fff;
+    position: absolute;
+    bottom: 120px;
+    left: 50px;
+    width: 450px;
+}
+
+.destination-details h1 {
+    font-weight: bold;
+    margin: 0;
+}
+
+.destination-details h2 {
+    font-weight: 100;
+    margin: 0;
+}
+
+.destination-details i {
+    color: rgb(230, 76, 101);
+    cursor: pointer;
+}
+
+#friend-avatar {
+    position: absolute;
+    width: 500px;
+    bottom: 30px;
+    left: 50px;
+}
+
+#friend-avatar img {
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+    height: 40px;
 }
