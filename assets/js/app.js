@@ -4,11 +4,11 @@ function myFunction(e) {
     "use strict";
     var x = e.clientX,
         y = e.clientY;
-    
+
     if (x > 1021) {
-        document.getElementsByClassName("menu")[0].style.width = "19em";
+        document.getElementsByClassName("menu")[0].style.width = "170px";
     } else if (x < 1021) {
-        document.getElementsByClassName("menu")[0].style.width = "1.5em";
+        document.getElementsByClassName("menu")[0].style.width = "0";
     }
 
 }

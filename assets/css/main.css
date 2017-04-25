@@ -10,22 +10,23 @@ body {
     ==========================
 */
 
-header {
+.main-header {
     background-color: #fff;
     box-sizing: border-box;
     padding: 10px 50px;
     position: absolute;
     height: 55px;
     width: 100%;
+    z-index: 5;
 }
 
-header h1 {
+.main-header h1 {
     display: inline;
     font: 30px 'Megrim', sans-serif;
     color: #2A3133;
 }
 
-header nav {
+.main-header nav {
     display: inline;
     margin-left: 160px;
 }
@@ -181,66 +182,50 @@ header nav {
     ==========================
 */
 
-@font-face {
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 200;
-    src: local('Raleway ExtraLight'), local('Raleway-ExtraLight'), url(https://fonts.gstatic.com/s/raleway/v11/8KhZd3VQBtXTAznvKjw-k_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-}
-
 .menu {
-    position: absolute;
-    right: 0px;
-    top: 0;
-    height: 100%;
-    list-style: none;
+    background-color: rgba(0, 0, 0, 0.2);
+    font: 100 15px 'Raleway', serif;
+    box-sizing: border-box;
     line-height: 42px;
-    /* margin: 0em auto; */
-    padding-left: 0;
-    overflow: hidden;
-    width: 1.5em;
-}
-
-.menu div {
-    width: 1.5em;
     position: absolute;
     top: 0;
-    left: 0;
-    background: #fff;
-    opacity: 0.2;
+    right: 0px;
+    min-width: 40px;
+    height: 100%;
+    padding: 230px 0;
+    overflow: hidden;
 }
 
-.menu a {
-    color: #ddd;
+.num {
+    box-sizing: border-box;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    padding: 0 16px;
+}
+
+.option {
+    color: #9d9d9d;
     text-decoration: none;
     text-transform: uppercase;
-    display: block;
-    width: 17.5em;
-}
-
-.menu li {
-    box-shadow: -280px 0 rgba(255, 255, 255, 0.2) inset;
-    /*inset hace que cresca por dentro el borde el primer valor se refiere a la horizontal y el segundo a la vertical*/
-    padding-left: 1.5em;
-    -webkit-transition: all .4s;
-    -o-transition: all .4s;
-    transition: all .4s;
+    box-shadow: 0 0 rgba(0, 0, 0, 1) inset;
     position: relative;
+    height: 40px;
+    width: 20px;
+    display: block;
+    padding-left: 20px;
+    -webkit-transition: all 1s;
+         -o-transition: all 1s;
+            transition: all 1s;
 }
 
-.numero-menu {
+.option span:nth-child(2) {
     position: absolute;
-    top: 0;
-    right: 19em;
-    opacity: 0.2;
-    height: 100%;
-    width: 2.5em;
-    background: #fff;
+    padding: 0 56px 0 0;
+    left: 50px;
 }
 
-.menu li:hover {
-    box-shadow: -21em 0 rgba(255, 255, 255, 0.2) inset;
-    z-index: 100;
-    color: #000;
+.option:hover {
+    color: #fff;
+    box-shadow: -200px 0 rgba(0, 0, 0, 1) inset;
 }
