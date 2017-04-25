@@ -15,12 +15,20 @@
   background-color: skyblue;
 }
 
-.mi-contenedor {
+.mi-contenedor-video {
   position: relative;
   margin:10px;
   width: 30%;
   display: inline-block;
+
+}
+.mi-contenedor-imagen {
+  position: relative;
+  margin:10px;
+  width: 30%;
   height: 30%;
+  display: inline-block;
+
 }
 .heart{
   position: absolute;
