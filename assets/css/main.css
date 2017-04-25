@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     margin: 0;
     padding: 0;
@@ -229,3 +230,51 @@ body {
     color: #fff;
     box-shadow: -200px 0 rgba(0, 0, 0, 1) inset;
 }
+=======
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#dropZone{
+  width: 100%;
+  position: absolute;
+  /* margin: 10% 10%; */
+  top: 10%;
+      padding-left: 3%;
+
+  height: 80%;
+  background-color: skyblue;
+}
+
+.mi-contenedor-video {
+  position: relative;
+  margin:10px;
+  width: 30%;
+  display: inline-block;
+
+}
+.mi-contenedor-imagen {
+  position: relative;
+  margin:10px;
+  width: 30%;
+  height: 30%;
+  display: inline-block;
+
+}
+.heart{
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  width: 15%;
+  height: 15%;
+  background: green;
+}
+.imagen{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 3%;
+}
+>>>>>>> pinBoard
