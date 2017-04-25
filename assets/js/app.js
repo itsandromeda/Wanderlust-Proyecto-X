@@ -66,7 +66,6 @@ dropZone.addEventListener('drop', function (e) {
                 contenedor.appendChild(img);
                 contenedor.appendChild(myCaption);
                 dropZone.appendChild(contenedor);
-
             };
 
             reader.readAsDataURL(file);
