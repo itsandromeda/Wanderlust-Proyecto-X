@@ -39,17 +39,22 @@ dropZone.addEventListener('drop', function (e) {
                 var contenedor = document.createElement("div"),
                     video = document.createElement("video"),
                     img = document.createElement('source'),
-                    myCaption = document.createElement("span");
-                
+                    myCaption = document.createElement("span"),
+                    type = document.createElement("div");
+
                 contenedor.setAttribute("class", "mi-contenedor-video");
+                type.classList.add("circle");
+                type.classList.add("videos");
                 video.setAttribute("controls", "");
                 img.setAttribute("class", "imagen");
                 img.src = e2.target.result;
-                
-                myCaption.setAttribute("class", "heart");
+
+                myCaption.classList.add("fa");
+                myCaption.classList.add("fa-heart-o");
                 video.appendChild(img);
                 contenedor.appendChild(video);
                 contenedor.appendChild(myCaption);
+                contenedor.appendChild(type);
                 dropZone.appendChild(contenedor);
             };
 
@@ -62,15 +67,20 @@ dropZone.addEventListener('drop', function (e) {
             reader.onload = function (e2) {
                 var contenedor = document.createElement("figure"),
                     img = document.createElement('img'),
-                    myCaption = document.createElement("span");
+                    myCaption = document.createElement("span"),
+                    type = document.createElement("div");
+
                 contenedor.setAttribute("class", "mi-contenedor-imagen");
+                type.classList.add("circle");
+                type.classList.add("images");
                 img.setAttribute("class", "imagen");
                 img.src = e2.target.result;
-                
-                console.log(e2.target.result);
-                myCaption.setAttribute("class", "heart");
+
+                myCaption.classList.add("fa");
+                myCaption.classList.add("fa-heart-o");
                 contenedor.appendChild(img);
                 contenedor.appendChild(myCaption);
+                contenedor.appendChild(type);
                 dropZone.appendChild(contenedor);
             };
 
