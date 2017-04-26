@@ -1,5 +1,15 @@
 /*global document, FileReader, PinBoard, localStorage*/
 
+window.addEventListener('load', function () {
+    "use strict";
+    var user = localStorage.getItem("autentica"),
+        userSpan;
+
+    if (user === null) {
+        window.location = "usuario.html";
+    }
+});
+
 /*TOOLTIP*/
 document.getElementsByClassName("nav-options")[3].addEventListener("click", function () {
     "use strict";
