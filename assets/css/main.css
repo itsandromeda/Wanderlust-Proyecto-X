@@ -47,12 +47,6 @@ body {
     border: none;
 }
 
-.nav-options:hover {
-    background: #2A3133;
-    font-weight: 100;
-    color: #fff;
-    padding: 14px 50px;
-}
 
 .user {
     border-radius: 50%;

@@ -1,4 +1,61 @@
 /*global document, FileReader*/
+////////*****   evento*********//////////////////////
+
+var navegador=document.getElementsByClassName("nav-options");
+
+navegador[0].addEventListener("mouseover", function(e){
+navegador[0].style.color="#fff";
+navegador[0].style.fontweight=100;
+navegador[0].style.background="#2A3133";
+navegador[0].style.padding="14px 50px";
+
+});
+navegador[0].addEventListener("mouseout", function(e){
+  navegador[0].style.color="#2A3133";
+  navegador[0].style.background="#fff";
+  navegador[0].style.padding="2px 50px";
+  navegador[0].style.fontweight=600;  });
+
+  navegador[1].addEventListener("mouseover", function(e){
+  navegador[1].style.color="#fff";
+  navegador[1].style.fontweight=100;
+  navegador[1].style.background="#2A3133";
+  navegador[1].style.padding="14px 50px";
+
+  });
+  navegador[1].addEventListener("mouseout", function(e){
+    navegador[1].style.color="#2A3133";
+    navegador[1].style.background="#fff";
+    navegador[1].style.padding="2px 50px";
+    navegador[1].style.fontweight=600;  });
+
+    navegador[2].addEventListener("mouseover", function(e){
+    navegador[2].style.color="#fff";
+    navegador[2].style.fontweight=100;
+    navegador[2].style.background="#2A3133";
+    navegador[2].style.padding="14px 50px";
+
+    });
+    navegador[2].addEventListener("mouseout", function(e){
+      navegador[2].style.color="#2A3133";
+      navegador[2].style.background="#fff";
+      navegador[2].style.padding="2px 50px";
+      navegador[2].style.fontweight=600;  });
+
+      navegador[3].addEventListener("mouseover", function(e){
+      navegador[3].style.color="#fff";
+      navegador[3].style.fontweight=100;
+      navegador[3].style.background="#2A3133";
+      navegador[3].style.padding="14px 50px";
+
+      });
+      navegador[3].addEventListener("mouseout", function(e){
+        navegador[3].style.color="#2A3133";
+        navegador[3].style.background="#fff";
+        navegador[3].style.padding="2px 50px";
+        navegador[3].style.fontweight=600;  });
+
+
 
 /*TOOLTIP*/
 document.getElementsByClassName("nav-options")[3].addEventListener("click", function () {
