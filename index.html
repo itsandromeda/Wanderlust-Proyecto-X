@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="wrapper contenido" onmousemove="myFunction(event)">
+    <div id="destination" class="wrapper contenido">
         <header class="main-header">
             <h1>Wanderlust</h1>
             <nav>
@@ -19,11 +19,42 @@
                 <a class="nav-options" href="#">Calendar</a>
                 <a class="nav-options" href="#">Friends</a>
                 <a class="nav-options" href="#">Messages</a>
+                <div class="tooltip">
+                    <h2>INBOX (3) <span>/ SENT</span></h2>
+                    <i class="fa fa-pencil-square-o"></i>
+                    <div class="messages">
+                        <div class="message unread">
+                            <img src="assets/images/friends/gabriella_ram.jpg" alt="Gabriella Ram">
+                            <h1>Gabriella Ramm</h1>
+                            <span> Are you comming to the Roadtrip</span>
+                        </div>
+                        <div class="message unread">
+                            <img src="assets/images/friends/gabriella_ram.jpg" alt="Gabriella Ram">
+                            <h1>Gabriella Ramm</h1>
+                            <span> Are you comming to the Roadtrip</span>
+                        </div>
+                        <div class="message unread">
+                            <img src="assets/images/friends/gabriella_ram.jpg" alt="Gabriella Ram">
+                            <h1>Gabriella Ramm</h1>
+                            <span> Are you comming to the Roadtrip</span>
+                        </div>
+                        <div class="message">
+                            <img src="assets/images/friends/gabriella_ram.jpg" alt="Gabriella Ram">
+                            <h1>Gabriella Ramm</h1>
+                            <span> Are you comming to the Roadtrip</span>
+                        </div>
+                        <div class="message">
+                            <img src="assets/images/friends/gabriella_ram.jpg" alt="Gabriella Ram">
+                            <h1>Gabriella Ramm</h1>
+                            <span> Are you comming to the Roadtrip</span>
+                        </div>
+                    </div>
+                </div>
             </nav>
             <img class="user" src="assets/images/friends/annia_j.jpg">
         </header>
         <div class="destination-details">
-            <h1>Roadtrip on Machu Picchu</h1>
+            <h1>Roadtrip to Machu Picchu</h1>
             <h2>March 3rd -  10th</h2>
             <i class="fa fa-heart"></i>
         </div>
@@ -36,7 +67,7 @@
         <nav class="menu">
             <a class="option" href="#">
                 <span class="num">1</span>
-                <span class="roadtrip">Destino</span>
+                <span class="roadtrip">Machu Picchu</span>
             </a>
             <a class="option" href="#">
                 <span class="num">2</span>

@@ -1,16 +1,23 @@
 /*global document, FileReader*/
 
-function myFunction(e) {
+/*TOOLTIP*/
+document.getElementsByClassName("nav-options")[3].addEventListener("click", function () {
+    "use strict";
+    document.getElementsByClassName("tooltip")[0].classList.toggle("show");
+});
+
+/*SIDE MENU*/
+document.getElementById("destination").onmousemove = function (e) {
     "use strict";
     var x = e.clientX,
         y = e.clientY;
 
-    if (x > 1021) {
-        document.getElementsByClassName("menu")[0].style.width = "170px";
+    if (x > 1100) {
+        document.getElementsByClassName("menu")[0].style.width = "200px";
     } else if (x < 1021) {
         document.getElementsByClassName("menu")[0].style.width = "0";
     }
-}
+};
 
 /*DROPZONE*/
 var dropZone = document.getElementById('dropZone');
@@ -26,65 +33,57 @@ dropZone.addEventListener('drop', function (e) {
     "use strict";
     e.stopPropagation();
     e.preventDefault();
-    var files = e.dataTransfer.files,
-        i,
-        file,
+    var i,
         reader;
 
-    for (i = 0; file = files[i]; i += 1) {
-        if (file.type.match(/video.*/)) {
+    function makeVideo(e) {
+        var container = document.createElement("div"),
+            video = document.createElement("video"),
+            source = document.createElement('source'),
+            span = document.createElement("span"),
+            type = document.createElement("div");
+
+        container.setAttribute("class", "video-container");
+        type.classList.add("circle");
+        type.classList.add("videos");
+        video.setAttribute("controls", "");
+        source.src = e.target.result;
+        span.classList.add("fa");
+        span.classList.add("fa-heart-o");
+        video.appendChild(source);
+        container.appendChild(video);
+        container.appendChild(span);
+        container.appendChild(type);
+        dropZone.appendChild(container);
+    }
+
+    function makeImage(e) {
+        var container = document.createElement("figure"),
+            img = document.createElement('img'),
+            span = document.createElement("span"),
+            type = document.createElement("div");
+
+        container.setAttribute("class", "image-container");
+        type.classList.add("circle");
+        type.classList.add("images");
+        img.src = e.target.result;
+        span.classList.add("fa");
+        span.classList.add("fa-heart-o");
+        container.appendChild(img);
+        container.appendChild(span);
+        container.appendChild(type);
+        dropZone.appendChild(container);
+    }
+
+    for (i = 0; e.dataTransfer.files[i]; i += 1) {
+        if (e.dataTransfer.files[i].type.match('video.*')) {
             reader = new FileReader();
-
-            reader.onload = function (e2) {
-                var contenedor = document.createElement("div"),
-                    video = document.createElement("video"),
-                    img = document.createElement('source'),
-                    myCaption = document.createElement("span"),
-                    type = document.createElement("div");
-
-                contenedor.setAttribute("class", "mi-contenedor-video");
-                type.classList.add("circle");
-                type.classList.add("videos");
-                video.setAttribute("controls", "");
-                img.setAttribute("class", "imagen");
-                img.src = e2.target.result;
-
-                myCaption.classList.add("fa");
-                myCaption.classList.add("fa-heart-o");
-                video.appendChild(img);
-                contenedor.appendChild(video);
-                contenedor.appendChild(myCaption);
-                contenedor.appendChild(type);
-                dropZone.appendChild(contenedor);
-            };
-
-            reader.readAsDataURL(file);
-        }
-
-        if (file.type.match(/image.*/)) {
+            reader.onload = makeVideo;
+            reader.readAsDataURL(e.dataTransfer.files[i]);
+        } else if (e.dataTransfer.files[i].type.match('image.*')) {
             reader = new FileReader();
-
-            reader.onload = function (e2) {
-                var contenedor = document.createElement("figure"),
-                    img = document.createElement('img'),
-                    myCaption = document.createElement("span"),
-                    type = document.createElement("div");
-
-                contenedor.setAttribute("class", "mi-contenedor-imagen");
-                type.classList.add("circle");
-                type.classList.add("images");
-                img.setAttribute("class", "imagen");
-                img.src = e2.target.result;
-
-                myCaption.classList.add("fa");
-                myCaption.classList.add("fa-heart-o");
-                contenedor.appendChild(img);
-                contenedor.appendChild(myCaption);
-                contenedor.appendChild(type);
-                dropZone.appendChild(contenedor);
-            };
-
-            reader.readAsDataURL(file);
+            reader.onload = makeImage;
+            reader.readAsDataURL(e.dataTransfer.files[i]);
         }
     }
 });
