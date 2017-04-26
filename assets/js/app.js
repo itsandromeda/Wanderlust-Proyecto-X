@@ -1,4 +1,4 @@
-/*global document, FileReader*/
+/*global document, FileReader, PinBoard*/
 
 /*TOOLTIP*/
 document.getElementsByClassName("nav-options")[3].addEventListener("click", function () {
@@ -7,7 +7,7 @@ document.getElementsByClassName("nav-options")[3].addEventListener("click", func
 });
 
 /*HEADER*/
-document.getElementsByClassName("nav-options").onmousemove = function (e) {
+document.getElementsByClassName("nav-options").onmouseover = function (e) {
     "use strict";
 };
 
@@ -43,6 +43,153 @@ for (i = 0; i < select.length; i += 1) {
     select[i].addEventListener('click', background);
 }
 
+/*REACTIONS*/
+document.getElementById("heart").addEventListener('click', function () {
+    "use strict";
+    document.getElementById("heart").style.visibility = "hidden";
+    document.getElementById("unheart").style.visibility = "visible";
+});
+
+document.getElementById("unheart").addEventListener('click', function () {
+    "use strict";
+    document.getElementById("heart").style.visibility = "visible";
+    document.getElementById("unheart").style.visibility = "hidden";
+});
+
+/*LOCAL STORAGE*/
+var usuarioActual = localStorage.getItem("autentica");
+var nameUser = document.getElementById("usuario");
+var contentPin = document.getElementById("dropZone");
+nameUser.innerHTML = usuarioActual;
+
+
+var pinBoard1 = new PinBoard();
+var contador = 0;
+
+function PinBoard() {
+    "use strict";
+    this.array = [];
+    this.arrayVideo = [];
+    this.contador = 0;
+    this.contadorVideo = 0;
+    this.crearPin = function (recurso) {
+        this.array.push({
+            id: this.contador,
+            recurso: recurso
+        });
+        this.contador += 1;
+    };
+    
+    this.crearPinVideo = function (recurso) {
+        this.arrayVideo.push({
+            id: this.contador,
+            recurso: recurso
+        });
+        this.contadorVideo += 1;
+    };
+
+    this.pines = function functionName(parent) {
+        parent.innerHTML = "";
+        this.array.forEach(function (elemento) {
+            parent.appendChild(this.publicaPin(elemento.recurso, elemento.id));
+        }, this);
+    };
+    
+    this.pinesVideo = function functionName(parent) {
+        this.arrayVideo.forEach(function (elemento) {
+            parent.appendChild(this.publicaPinVideo(elemento.recurso, elemento.id));
+        }, this);
+
+    };
+    
+    this.publicaPin = function (recurso) {
+        var contenedor = document.createElement("figure"),
+            img = document.createElement('img'),
+            myCaption = document.createElement("span"),
+            type = document.createElement("div"),
+            eliminar;
+
+        contenedor.setAttribute("class", "image-container");
+        type.classList.add("circle");
+        type.classList.add("images");
+        img.setAttribute("class", "imagen");
+        img.src = recurso; //recurso despues de la igualdad
+        myCaption.classList.add("fa");
+        myCaption.classList.add("fa-heart-o");
+
+        eliminar = document.createElement("a");
+        eliminar.innerHTML = "Eliminar";
+        eliminar.setAttribute("href", "#pinboard");
+        eliminar.addEventListener('click', function (e) {
+            if (contenedor.parentNode) {
+                contenedor.parentNode.removeChild(contenedor);
+            }
+            var postId = e.target.parentNode.getAttribute('data-id');
+            pinBoard1.array.splice(postId, 1);
+        });
+        contenedor.appendChild(eliminar);
+        contenedor.appendChild(img);
+        contenedor.appendChild(myCaption);
+        contenedor.appendChild(type);
+        return contenedor;
+    };
+    
+    this.publicaPinVideo = function (recurso) {
+        var contenedor = document.createElement("div"),
+            video = document.createElement("video"),
+            img = document.createElement('source'),
+            myCaption = document.createElement("span"),
+            type = document.createElement("div"),
+            eliminar;
+
+        contenedor.setAttribute("class", "video-container");
+        type.classList.add("circle");
+        type.classList.add("videos");
+        video.setAttribute("controls", "");
+        img.setAttribute("class", "imagen");
+        img.src = recurso;
+        eliminar = document.createElement("a");
+        eliminar.innerHTML = "Eliminar";
+        eliminar.setAttribute("href", "#pinboard");
+        eliminar.addEventListener('click', function (e) {
+            if (contenedor.parentNode) {
+                contenedor.parentNode.removeChild(contenedor);
+            }
+            var postId = e.target.parentNode.getAttribute('data-id');
+            pinBoard1.array.splice(postId, 1);
+        });
+
+        myCaption.classList.add("fa");
+        myCaption.classList.add("fa-heart-o");
+        video.appendChild(img);
+        contenedor.appendChild(eliminar);
+        contenedor.appendChild(video);
+        contenedor.appendChild(myCaption);
+        contenedor.appendChild(type);
+        return contenedor;
+    };
+}
+
+/*global document, FileReader*/
+
+function myFunction(e) {
+    "use strict";
+    var x = e.clientX,
+        y = e.clientY;
+
+    if (x > 1021) {
+        document.getElementsByClassName("menu")[0].style.width = "170px";
+    } else if (x < 1021) {
+        document.getElementsByClassName("menu")[0].style.width = "0";
+    }
+}
+
+document.getElementsByClassName("nav-options")[3].addEventListener("click", function (e) {
+    "use strict";
+    e.preventDefault();
+    document.getElementsByClassName("tooltip")[0].classList.toggle("mostrar");
+});
+
 /*DROPZONE*/
 var dropZone = document.getElementById('dropZone');
 
@@ -60,85 +207,46 @@ dropZone.addEventListener('drop', function (e) {
     var i,
         reader;
 
-    function makeVideo(e) {
-        var container = document.createElement("div"),
-            video = document.createElement("video"),
-            source = document.createElement('source'),
-            span = document.createElement("span"),
-            type = document.createElement("div"),
-            trash = document.createElement("span");
-
-        container.setAttribute("class", "video-container");
-        type.classList.add("circle");
-        type.classList.add("videos");
-        video.setAttribute("controls", "");
-        trash.classList.add("fa");
-        trash.classList.add("fa-trash");
-        trash.addEventListener('click', function (e) {
-            var parentSpan = e.target.parentNode;
-            container.parentNode.removeChild(container);
-        });
-
-        source.src = e.target.result;
-        span.classList.add("fa");
-        span.classList.add("fa-heart-o");
-        video.appendChild(source);
-        container.appendChild(video);
-        container.appendChild(span);
-        container.appendChild(type);
-        container.appendChild(trash);
-        dropZone.appendChild(container);
-    }
-
-    function makeImage(e) {
-        var container = document.createElement("figure"),
-            img = document.createElement('img'),
-            span = document.createElement("span"),
-            type = document.createElement("div"),
-            trash = document.createElement("span");
-
-        container.setAttribute("class", "image-container");
-        type.classList.add("circle");
-        type.classList.add("images");
-        trash.classList.add("fa");
-        trash.classList.add("fa-trash");
-        trash.addEventListener('click', function (e) {
-            var parentSpan = e.target.parentNode;
-            container.parentNode.removeChild(container);
-        });
-
-        img.src = e.target.result;
-        span.classList.add("fa");
-        span.classList.add("fa-heart-o");
-        container.appendChild(img);
-        container.appendChild(span);
-        container.appendChild(type);
-        container.appendChild(trash);
-        dropZone.appendChild(container);
-    }
-
     for (i = 0; e.dataTransfer.files[i]; i += 1) {
-        if (e.dataTransfer.files[i].type.match('video.*')) {
+        if (e.dataTransfer.files[i].type.match("image.*")) {
             reader = new FileReader();
-            reader.onload = makeVideo;
-            reader.readAsDataURL(e.dataTransfer.files[i]);
-        } else if (e.dataTransfer.files[i].type.match('image.*')) {
-            reader = new FileReader();
-            reader.onload = makeImage;
+            reader.onload = function (e) {
+                pinBoard1.crearPin(e.target.result);
+                pinBoard1.pines(contentPin);
+                pinBoard1.pinesVideo(contentPin);
+                contador += 1;
+            };
             reader.readAsDataURL(e.dataTransfer.files[i]);
         }
+        if (e.dataTransfer.files[i].type.match("video.*")) {
+            reader = new FileReader();
+            reader.onload = function (e) {
+                pinBoard1.crearPinVideo(e.target.result);
+                pinBoard1.pines(contentPin);
+                pinBoard1.pinesVideo(contentPin);
+                contador += 1;
+            };
+            reader.readAsDataURL(e.dataTransfer.files[i]);
+        }
+        localStorage.setItem(usuarioActual, JSON.stringify(pinBoard1));
     }
 });
 
-/*REACTIONS*/
-document.getElementById("heart").addEventListener('click', function () {
+var multimedia = document.getElementsByClassName("circle");
+multimedia[0].addEventListener("click", function () {
     "use strict";
-    document.getElementById("heart").style.visibility = "hidden";
-    document.getElementById("unheart").style.visibility = "visible";
+    contentPin.innerHTML = "";
+    pinBoard1.pinesVideo(contentPin);
 });
 
-document.getElementById("unheart").addEventListener('click', function () {
+multimedia[1].addEventListener("click", function () {
     "use strict";
-    document.getElementById("heart").style.visibility = "visible";
-    document.getElementById("unheart").style.visibility = "hidden";
+    pinBoard1.pinesVideo(contentPin);
+});
+
+var multimedia = document.getElementsByClassName("circle");
+
+multimedia[2].addEventListener("click", function () {
+    "use strict";
+    pinBoard1.pines(contentPin);
 });
