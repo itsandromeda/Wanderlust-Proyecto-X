@@ -9,7 +9,6 @@ document.getElementsByClassName("nav-options")[3].addEventListener("click", func
 /*HEADER*/
 document.getElementsByClassName("nav-options").onmousemove = function (e) {
     "use strict";
-    console.log("hi");
 };
 
 /*SIDE MENU*/
