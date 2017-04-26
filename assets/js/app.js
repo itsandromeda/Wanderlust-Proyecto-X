@@ -112,13 +112,13 @@ function PinBoard() {
         type.classList.add("circle");
         type.classList.add("images");
         img.setAttribute("class", "imagen");
-        img.src = recurso; //recurso despues de la igualdad
+        img.src = recurso;
         myCaption.classList.add("fa");
         myCaption.classList.add("fa-heart-o");
 
-        eliminar = document.createElement("a");
-        eliminar.innerHTML = "Eliminar";
-        eliminar.setAttribute("href", "#pinboard");
+        eliminar = document.createElement("i");
+        eliminar.classList.add("fa");
+        eliminar.classList.add("fa-trash");
         eliminar.addEventListener('click', function (e) {
             if (contenedor.parentNode) {
                 contenedor.parentNode.removeChild(contenedor);
@@ -147,9 +147,9 @@ function PinBoard() {
         video.setAttribute("controls", "");
         img.setAttribute("class", "imagen");
         img.src = recurso;
-        eliminar = document.createElement("a");
-        eliminar.innerHTML = "Eliminar";
-        eliminar.setAttribute("href", "#pinboard");
+        eliminar = document.createElement("i");
+        eliminar.classList.add("fa");
+        eliminar.classList.add("fa-trash");
         eliminar.addEventListener('click', function (e) {
             if (contenedor.parentNode) {
                 contenedor.parentNode.removeChild(contenedor);
@@ -168,8 +168,6 @@ function PinBoard() {
         return contenedor;
     };
 }
-
-/*global document, FileReader*/
 
 function myFunction(e) {
     "use strict";
@@ -232,6 +230,7 @@ dropZone.addEventListener('drop', function (e) {
 });
 
 var multimedia = document.getElementsByClassName("circle");
+
 multimedia[0].addEventListener("click", function () {
     "use strict";
     contentPin.innerHTML = "";
@@ -243,6 +242,7 @@ multimedia[1].addEventListener("click", function () {
     pinBoard1.pines(contentPin);
     pinBoard1.pinesVideo(contentPin);
 });
+
 multimedia[2].addEventListener("click", function () {
     "use strict";
     pinBoard1.pines(contentPin);
