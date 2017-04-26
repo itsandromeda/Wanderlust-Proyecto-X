@@ -10,6 +10,20 @@ body {
     ==========================
 */
 
+.user-login {
+    font: 15px 'Raleway', sans-serif;
+    color: #333;
+    position: absolute;
+    top: 20px;
+    right: 100px;
+}
+
+#usuario {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 .main-header {
     background-color: #fff;
     box-sizing: border-box;
