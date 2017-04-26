@@ -1,4 +1,4 @@
-/*global document, FileReader, PinBoard*/
+/*global document, FileReader, PinBoard, localStorage*/
 
 /*TOOLTIP*/
 document.getElementsByClassName("nav-options")[3].addEventListener("click", function () {
@@ -62,7 +62,6 @@ var nameUser = document.getElementById("usuario");
 var contentPin = document.getElementById("dropZone");
 nameUser.innerHTML = usuarioActual;
 
-
 var pinBoard1 = new PinBoard();
 var contador = 0;
 
@@ -79,7 +78,7 @@ function PinBoard() {
         });
         this.contador += 1;
     };
-    
+
     this.crearPinVideo = function (recurso) {
         this.arrayVideo.push({
             id: this.contador,
@@ -94,14 +93,14 @@ function PinBoard() {
             parent.appendChild(this.publicaPin(elemento.recurso, elemento.id));
         }, this);
     };
-    
+
     this.pinesVideo = function functionName(parent) {
         this.arrayVideo.forEach(function (elemento) {
             parent.appendChild(this.publicaPinVideo(elemento.recurso, elemento.id));
         }, this);
 
     };
-    
+
     this.publicaPin = function (recurso) {
         var contenedor = document.createElement("figure"),
             img = document.createElement('img'),
@@ -133,7 +132,7 @@ function PinBoard() {
         contenedor.appendChild(type);
         return contenedor;
     };
-    
+
     this.publicaPinVideo = function (recurso) {
         var contenedor = document.createElement("div"),
             video = document.createElement("video"),
@@ -241,11 +240,9 @@ multimedia[0].addEventListener("click", function () {
 
 multimedia[1].addEventListener("click", function () {
     "use strict";
+    pinBoard1.pines(contentPin);
     pinBoard1.pinesVideo(contentPin);
 });
-
-var multimedia = document.getElementsByClassName("circle");
-
 multimedia[2].addEventListener("click", function () {
     "use strict";
     pinBoard1.pines(contentPin);
