@@ -9,26 +9,6 @@ var usuarios = [{
         correo: "itsandromeda@gmail.com",
         contraseña: "321",
         source: "assets/images/annia.jpg"
-    },
-    {
-        nombre: "Ruth",
-        correo: "ruth@lab.es",
-        contraseña: "456"
-    },
-    {
-        nombre: "Gladys",
-        correo: "gla@lab.es",
-        contraseña: "789"
-    },
-    {
-        nombre: "Vanny",
-        correo: "va@lab.es",
-        contraseña: "1011"
-    },
-    {
-        nombre: "Flor",
-        correo: "flor@lab.es",
-        contraseña: "1012"
     }];
 var correo = document.getElementById("username");
 var pass = document.getElementById("pw");
