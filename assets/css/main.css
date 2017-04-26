@@ -94,9 +94,18 @@ body {
     margin: 0;
 }
 
-.destination-details i {
+#heart,
+#unheart {
+    font-size: 30px;
     color: rgb(230, 76, 101);
+    position: absolute;
+    bottom: 133px;
+    left: 290px;
     cursor: pointer;
+}
+
+#heart {
+    visibility: hidden;
 }
 
 #friend-avatar {

@@ -6,6 +6,12 @@ document.getElementsByClassName("nav-options")[3].addEventListener("click", func
     document.getElementsByClassName("tooltip")[0].classList.toggle("show");
 });
 
+/*HEADER*/
+document.getElementsByClassName("nav-options").onmousemove = function (e) {
+    "use strict";
+    console.log("hi");
+};
+
 /*SIDE MENU*/
 document.getElementById("destination").onmousemove = function (e) {
     "use strict";
@@ -27,7 +33,7 @@ var background = function () {
     var element = this.name;
 
     document.getElementsByClassName("wrapper")[0].style.background = "url(assets/images/" + element + ".jpg";
-    
+
     for (i = 0; i < select.length; i += 1) {
         document.getElementsByClassName("destination-details")[i].style.display = "none";
     }
@@ -123,4 +129,17 @@ dropZone.addEventListener('drop', function (e) {
             reader.readAsDataURL(e.dataTransfer.files[i]);
         }
     }
+});
+
+/*REACTIONS*/
+document.getElementById("heart").addEventListener('click', function () {
+    "use strict";
+    document.getElementById("heart").style.visibility = "hidden";
+    document.getElementById("unheart").style.visibility = "visible";
+});
+
+document.getElementById("unheart").addEventListener('click', function () {
+    "use strict";
+    document.getElementById("heart").style.visibility = "visible";
+    document.getElementById("unheart").style.visibility = "hidden";
 });
