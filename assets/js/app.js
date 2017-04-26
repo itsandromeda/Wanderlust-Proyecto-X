@@ -1,3 +1,7 @@
+    var usuarioActual=localStorage.getItem("autentica");
+var nameUser=document.getElementById("usuario");
+nameUser.innerHTML=usuarioActual;
+
 /////*************************creando el objeto************/
 var pinBoard1 = new pinBoard();
 var contador = 0;
@@ -161,7 +165,7 @@ dropZone.addEventListener('drop', function(e) {
             };
             reader.readAsDataURL(file);
         }
-        var usuarioActual=localStorage.getItem("autentica");
+
 localStorage.setItem(usuarioActual, JSON.stringify(pinBoard1));
 console.log("contenido actual "+ JSON.parse(localStorage.getItem(usuarioActual)));
     }
