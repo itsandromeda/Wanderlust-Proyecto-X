@@ -198,18 +198,15 @@
 
     var multimedia=document.getElementsByClassName("circle");
     multimedia[0].addEventListener("click", function(){
-console.log(pinBoard1);
 contentPin.innerHTML="";
   pinBoard1.pinesVideo(contentPin);
     });
+
     multimedia[1].addEventListener("click", function(){
-console.log(pinBoard1);
 
-  pinBoard1.pinesVideo(contentPin);
+        pinBoard1.pines(contentPin);
+          pinBoard1.pinesVideo(contentPin);
     });
-    var multimedia=document.getElementsByClassName("circle");
     multimedia[2].addEventListener("click", function(){
-console.log("imagenes");
-
   pinBoard1.pines(contentPin);
     });
