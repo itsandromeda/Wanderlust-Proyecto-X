@@ -19,6 +19,25 @@ document.getElementById("destination").onmousemove = function (e) {
     }
 };
 
+var select = document.getElementsByClassName("option"),
+    i;
+
+var background = function () {
+    "use strict";
+    var element = this.name;
+
+    document.getElementsByClassName("wrapper")[0].style.background = "url(assets/images/" + element + ".jpg";
+    
+    for (i = 0; i < select.length; i += 1) {
+        document.getElementsByClassName("destination-details")[i].style.display = "none";
+    }
+    document.getElementById(element).style.display = "inline-block";
+};
+
+for (i = 0; i < select.length; i += 1) {
+    select[i].addEventListener('click', background);
+}
+
 /*DROPZONE*/
 var dropZone = document.getElementById('dropZone');
 
@@ -54,7 +73,7 @@ dropZone.addEventListener('drop', function (e) {
             var parentSpan = e.target.parentNode;
             container.parentNode.removeChild(container);
         });
-        
+
         source.src = e.target.result;
         span.classList.add("fa");
         span.classList.add("fa-heart-o");

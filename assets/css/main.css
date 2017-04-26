@@ -113,10 +113,6 @@ body {
     height: 40px;
 }
 
-#pinboard {
-    height: 700px;
-}
-
 
 /*
     ==========================
@@ -184,6 +180,10 @@ body {
     ==========================
 */
 
+#pinboard {
+    height: 500px;
+}
+
 .pinboard-header {
     position: relative;
     box-sizing: border-box;
@@ -238,21 +238,11 @@ body {
     top: 3px;
 }
 
-#pinboard {}
-
 .pinboard-items {
     background-color: #EDEFF0;
     position: relative;
-    min-height: 600px;
+    min-height: 400px;
     padding: 30px;
-}
-
-.fa-trash {
-    position: absolute;
-    color: #fff;
-    bottom: 15px;
-    right: 15px;
-    cursor: pointer;
 }
 
 .image-container,
@@ -282,6 +272,14 @@ body {
     position: absolute;
     top: 15px;
     left: 15px;
+    cursor: pointer;
+}
+
+.pinboard-items .fa-trash {
+    position: absolute;
+    color: #fff;
+    bottom: 15px;
+    right: 15px;
     cursor: pointer;
 }
 
@@ -408,6 +406,10 @@ body {
     height: 20%;
     top: 49%;
     left: 30%;
+}
+
+.hide {
+    display: none;
 }
 
 .show {
