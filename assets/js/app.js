@@ -1,3 +1,102 @@
+/////*************************creando el objeto************/
+var pinBoard1 = new pinBoard();
+var contador = 0;
+
+function pinBoard() {
+    this.array = [];
+    this.contador = 0;
+    this.crearPin = function(recurso) {
+        this.array.push({
+            id: this.contador,
+            recurso: recurso
+        });
+        this.contador++;
+    }
+    this.pines = function functionName(parent) {
+        parent.innerHTML = "";
+        this.array.forEach(function(elemento) {
+            parent.appendChild(this.publicaPin(elemento.recurso, elemento.id));
+        }, this);}
+        this.pinesVideo = function functionName(parent) {
+            parent.innerHTML = "";
+            this.array.forEach(function(elemento) {
+                parent.appendChild(this.publicaPinVideo(elemento.recurso, elemento.id));
+            }, this);
+
+    }
+    this.publicaPin = function(recurso) {
+        var contenedor = document.createElement("figure"),
+            img = document.createElement('img'),
+            myCaption = document.createElement("span"),
+            type = document.createElement("div");
+
+        contenedor.setAttribute("class", "mi-contenedor-imagen");
+        type.classList.add("circle");
+        type.classList.add("images");
+        img.setAttribute("class", "imagen");
+        img.src = recurso; //recurso despues de la igualdad
+        myCaption.classList.add("fa");
+        myCaption.classList.add("fa-heart-o");
+
+        var eliminar = document.createElement("a");
+        eliminar.innerHTML = "Eliminar";
+        eliminar.setAttribute("href", "#");
+        eliminar.addEventListener('click', function(e) {
+            alert("Esta seguro de eliminar la publicacion");
+            if (contenedor.parentNode) {
+                contenedor.parentNode.removeChild(contenedor);
+            }
+            var postId = e.target.parentNode.getAttribute('data-id');
+            pinBoard1.array.splice(postId, 1);
+        });
+        contenedor.appendChild(eliminar);
+        contenedor.appendChild(img);
+        contenedor.appendChild(myCaption);
+        contenedor.appendChild(type);
+        return contenedor;
+    }
+    this.publicaPinVideo = function(recurso) {
+      var contenedor = document.createElement("div"),
+          video = document.createElement("video"),
+          img = document.createElement('source'),
+          myCaption = document.createElement("span"),
+          type = document.createElement("div");
+
+      contenedor.setAttribute("class", "mi-contenedor-video");
+      type.classList.add("circle");
+      type.classList.add("videos");
+      video.setAttribute("controls", "");
+      img.setAttribute("class", "imagen");
+      img.src = recurso;
+      var eliminar = document.createElement("a");
+      eliminar.innerHTML = "Eliminar";
+      eliminar.setAttribute("href", "#");
+      eliminar.addEventListener('click', function(e) {
+          alert("Esta seguro de eliminar la publicacion");
+          if (contenedor.parentNode) {
+              contenedor.parentNode.removeChild(contenedor);
+          }
+          var postId = e.target.parentNode.getAttribute('data-id');
+          pinBoard1.array.splice(postId, 1);
+      });
+
+      myCaption.classList.add("fa");
+      myCaption.classList.add("fa-heart-o");
+      video.appendChild(img);
+      contenedor.appendChild(eliminar);
+      contenedor.appendChild(video);
+      contenedor.appendChild(myCaption);
+      contenedor.appendChild(type);
+      return contenedor;
+
+}
+
+}
+
+
+
+
+
 /*global document, FileReader*/
 
 function myFunction(e) {
@@ -37,58 +136,33 @@ dropZone.addEventListener('drop', function(e) {
         reader;
 
     for (i = 0; file = files[i]; i += 1) {
-        if (file.type.match(/video.*/)) {
-            reader = new FileReader();
-
-            reader.onload = function(e2) {
-                var contenedor = document.createElement("div"),
-                    video = document.createElement("video"),
-                    img = document.createElement('source'),
-                    myCaption = document.createElement("span"),
-                    type = document.createElement("div");
-
-                contenedor.setAttribute("class", "mi-contenedor-video");
-                type.classList.add("circle");
-                type.classList.add("videos");
-                video.setAttribute("controls", "");
-                img.setAttribute("class", "imagen");
-                img.src = e2.target.result;
-
-                myCaption.classList.add("fa");
-                myCaption.classList.add("fa-heart-o");
-                video.appendChild(img);
-                contenedor.appendChild(video);
-                contenedor.appendChild(myCaption);
-                contenedor.appendChild(type);
-                dropZone.appendChild(contenedor);
-            };
-
-            reader.readAsDataURL(file);
-        }
-
         if (file.type.match(/image.*/)) {
             reader = new FileReader();
-
             reader.onload = function(e2) {
-                var contenedor = document.createElement("figure"),
-                    img = document.createElement('img'),
-                    myCaption = document.createElement("span"),
-                    type = document.createElement("div");
+                /*codigo de mi objeto*/
+                var contentPin = document.getElementById("dropZone");
+      pinBoard1.crearPin(e2.target.result);
+                pinBoard1.pines(contentPin);
+                contador++;
 
-                contenedor.setAttribute("class", "mi-contenedor-imagen");
-                type.classList.add("circle");
-                type.classList.add("images");
-                img.setAttribute("class", "imagen");
-                img.src = e2.target.result;
-                myCaption.classList.add("fa");
-                myCaption.classList.add("fa-heart-o");
-                contenedor.appendChild(img);
-                contenedor.appendChild(myCaption);
-                contenedor.appendChild(type);
-                dropZone.appendChild(contenedor);
+
             };
 
             reader.readAsDataURL(file);
         }
+        if (file.type.match(/video.*/)) {
+            reader = new FileReader();
+            reader.onload = function(e2) {
+                /*codigo de mi objeto*/
+                var contentPin = document.getElementById("dropZone");
+      pinBoard1.crearPin(e2.target.result);
+                pinBoard1.pinesVideo(contentPin);
+                contador++;
+            };
+            reader.readAsDataURL(file);
+        }
+        var usuarioActual=localStorage.getItem("autentica");
+localStorage.setItem(usuarioActual, JSON.stringify(pinBoard1));
+console.log("contenido actual "+ JSON.parse(localStorage.getItem(usuarioActual)));
     }
 });
