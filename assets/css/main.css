@@ -247,6 +247,14 @@ body {
     padding: 30px;
 }
 
+.fa-trash {
+    position: absolute;
+    color: #fff;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
 .image-container,
 .video-container {
     margin: 10px;

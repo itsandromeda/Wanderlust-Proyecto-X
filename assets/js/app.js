@@ -41,12 +41,20 @@ dropZone.addEventListener('drop', function (e) {
             video = document.createElement("video"),
             source = document.createElement('source'),
             span = document.createElement("span"),
-            type = document.createElement("div");
+            type = document.createElement("div"),
+            trash = document.createElement("span");
 
         container.setAttribute("class", "video-container");
         type.classList.add("circle");
         type.classList.add("videos");
         video.setAttribute("controls", "");
+        trash.classList.add("fa");
+        trash.classList.add("fa-trash");
+        trash.addEventListener('click', function (e) {
+            var parentSpan = e.target.parentNode;
+            container.parentNode.removeChild(container);
+        });
+        
         source.src = e.target.result;
         span.classList.add("fa");
         span.classList.add("fa-heart-o");
@@ -54,6 +62,7 @@ dropZone.addEventListener('drop', function (e) {
         container.appendChild(video);
         container.appendChild(span);
         container.appendChild(type);
+        container.appendChild(trash);
         dropZone.appendChild(container);
     }
 
@@ -61,17 +70,26 @@ dropZone.addEventListener('drop', function (e) {
         var container = document.createElement("figure"),
             img = document.createElement('img'),
             span = document.createElement("span"),
-            type = document.createElement("div");
+            type = document.createElement("div"),
+            trash = document.createElement("span");
 
         container.setAttribute("class", "image-container");
         type.classList.add("circle");
         type.classList.add("images");
+        trash.classList.add("fa");
+        trash.classList.add("fa-trash");
+        trash.addEventListener('click', function (e) {
+            var parentSpan = e.target.parentNode;
+            container.parentNode.removeChild(container);
+        });
+
         img.src = e.target.result;
         span.classList.add("fa");
         span.classList.add("fa-heart-o");
         container.appendChild(img);
         container.appendChild(span);
         container.appendChild(type);
+        container.appendChild(trash);
         dropZone.appendChild(container);
     }
 
