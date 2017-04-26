@@ -1,4 +1,5 @@
-var usuarios=[{nombre:"Leidy" , correo:"ross@lab.es" , contraseña:"123", source:"" },
+var usuarios=[{nombre:"Leidy" , correo:"ross@lab.es" , contraseña:"123", source:"assets/images/gabriella_ram.jpg" },
+              {nombre:"Annia" , correo:"annia@lab.es" , contraseña:"321" ,source:"assets/images/annia.jpg"},
               {nombre:"Ruth" , correo:"ruth@lab.es" , contraseña:"456" },
               {nombre: "Gladys" , correo:"gla@lab.es" , contraseña:"789" },
               {nombre:"Vanny", correo: "va@lab.es" , contraseña:"1011" },

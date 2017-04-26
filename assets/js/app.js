@@ -1,3 +1,11 @@
+window.addEventListener('load',function() {
+  console.log("corre load");
+  pinBoard1.pines(contentPin);
+    pinBoard1.pinesVideo(contentPin);
+});
+
+
+
         var usuarioActual = localStorage.getItem("autentica");
         var nameUser = document.getElementById("usuario");
             var contentPin = document.getElementById("dropZone");
