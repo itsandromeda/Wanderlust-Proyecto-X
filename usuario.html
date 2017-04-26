@@ -1,19 +1,49 @@
+<!doctype html>
 
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+    <title>Wanderlust | Sign in</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/login.css">
+    <link rel="icon" href="assets/images/heart_.png">
+    <link href="https://fonts.googleapis.com/css?family=Megrim|Open+Sans+Condensed:300|Raleway" rel="stylesheet">
 </head>
-<body>
-  <label for="correo"> Correo : </label>
-  <input type="text" id="correo" placeholder="Ingresa tu correo"><br><br>
-  <label for="pass"> Password : </label>
-  <input type="password" id="pass" placeholder="Ingresa tu contraseña"><br><br>
-  <input type="button" id="loguear" value=" Loguearse">
-  <script type="text/javascript" src="assets/js/usuario.js"></script>
 
+<body>
+    <header>
+        <h1>Wanderlust</h1>
+    </header>
+    <div id="form">
+        <form action="index.html">
+            <table>
+                <tr>
+                    <td>
+                        <input id="username" type="text" name="data" class="data email" placeholder="Username" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><span id="error-a" class="error"></span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="pw" type="password" name="data" class="data password" placeholder="Password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><span id="error-b" class="error"></span></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div>
+        <button type="submit" id="sign-in" value=" Loguearse">Log In</button>
+    </div>
+    <div class="log-in">
+        <a href="#">Need Help?</a>
+    </div>
+    <script type="text/javascript" src="assets/js/usuario.js"></script>
 </body>
+
 </html>
