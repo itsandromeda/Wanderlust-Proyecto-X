@@ -1,4 +1,4 @@
-/*global document, FileReader, PinBoard, localStorage*/
+/*global window, document, FileReader, PinBoard, localStorage*/
 
 window.addEventListener('load', function () {
     "use strict";
