@@ -35,11 +35,11 @@ Nuestra tarea en este proyecto es construir un sitio web con todo lo aprendido h
 
 ## Live demo
 ### Part I
-![Wanderlust Demo Part I](https://s-media-cache-ak0.pinimg.com/originals/ef/88/c2/ef88c2dd5db9f9e6bb5bdb23d06f09a1.gif)
+![Wanderlust Demo Part I](https://s-media-cache-ak0.pinimg.com/originals/8b/9a/09/8b9a0915b49c610a7927a283044402df.gif)
 ### Part II
-![Wanderlust Demo Part II](https://s-media-cache-ak0.pinimg.com/originals/70/7a/d7/707ad7e39cdf7f0d86374038a1e94b65.gif)
+![Wanderlust Demo Part II](https://s-media-cache-ak0.pinimg.com/originals/3e/00/c3/3e00c34f29cc22d41dd84c67c776d156.gif)
 ### Part III
-![Wanderlust Demo Part III](https://s-media-cache-ak0.pinimg.com/originals/f9/87/0c/f9870c4836be8384cbf3b6ee1d095702.gif)
+![Wanderlust Demo Part III](https://s-media-cache-ak0.pinimg.com/originals/2a/79/a9/2a79a9eb0b25148da7ef987ac1daeebd.gif)
 
 ## Contenido de ramas de trabajo
 - **home:** Estructura principal y diseño.
