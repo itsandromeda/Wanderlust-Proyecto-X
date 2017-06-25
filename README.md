@@ -1,6 +1,6 @@
 # Wanderlust
 
-Wanderlust es una plataforma web que te conecta con gente con ganas del explorar el mundo. Puedes obtener información sobre lugares en tendencia, armar pinboards con temas únicos para cada viaje con fotos y videos. Viaja con tus amigos! Explora, organiza y comparte las memorias de tus road trips en un solo lugar. Puedes ver el demo del website haciendo click [aquí](https://itsandromeda.github.io/Wanderlust/). *No olvides utilizar uno de los usuarios para poder ingresar.*
+Wanderlust es una plataforma web que te conecta con gente con ganas del explorar el mundo. Puedes obtener información sobre lugares en tendencia, armar pinboards con temas únicos para cada viaje con fotos y videos. Viaja con tus amigos! Explora, organiza y comparte las memorias de tus road trips en un solo lugar. Puedes ver el demo del website haciendo click [aquí](https://itsandromeda.github.io/Wanderlust-Proyecto-X/). *No olvides utilizar uno de los usuarios para poder ingresar.*
 
 |USUARIO| CONTRASEÑA
 |---|---|
